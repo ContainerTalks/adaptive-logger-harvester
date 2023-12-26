@@ -10,11 +10,11 @@ services:
       - ELASTICSEARCH_CA_CERT=/app/ca.crt
       - ELASTICSEARCH_USER=elastic
       - ELASTICSEARCH_PASSWORD=elastic123
-      - CONTAINER_NAME_PATTERN=kibana
-      - TIME_SINCE_IN_MIN=5
-      - ENV="staging"
-      - APP_NAME="kibana"
-      - INDEX_NAME="test4_new"
+      - CONTAINER_NAME_FILTER=kibana
+      - LOGS_TIME_OFFSET_MINUTES=5
+      - APP_ENVIRONMENT=staging
+      - APP_NAME=kibana
+      - INDEX_NAME=adaptive-logger-harvester-index
     volumes:
       - /Volumes/project/Docker-X/elastic-stack/synonyms-search/certs/ca/ca.crt:/app/ca.crt
       - /var/run/docker.sock:/var/run/docker.sock
